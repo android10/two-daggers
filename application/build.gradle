@@ -30,8 +30,8 @@ dependencies {
   compile "com.squareup.dagger:dagger:$project.dagger1Version"
 
   //Dagger 2
-  apt project(path: ':dagger-compiler', transitive: false)
-  compile project(path: ':dagger', transitive: false)
+  apt project(path: ':two-daggers-compiler', transitive: false)
+  compile project(path: ':two-daggers-library', transitive: false)
 
   compile "com.jakewharton:butterknife:$project.butterKnifeVersion"
 
