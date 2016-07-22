@@ -1,0 +1,15 @@
+allprojects {
+  repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.12'
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
