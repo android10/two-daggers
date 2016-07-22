@@ -5,8 +5,8 @@ buildscript {
     mavenLocal()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.1.0'
-    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    classpath "com.android.tools.build:gradle:$project.androidBuildToolsVersion"
+    classpath "com.neenbedankt.gradle.plugins:android-apt:$project.aptVersion"
   }
 }
 
@@ -14,28 +14,26 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-  compileSdkVersion 23
-  buildToolsVersion "23.0.3"
+  compileSdkVersion Integer.parseInt(project.compileSdkVersion)
+  buildToolsVersion project.buildToolsVersion
 
   defaultConfig {
-    applicationId "com.fernandocejas.twodaggers"
-    minSdkVersion 16
-    targetSdkVersion 23
-    versionCode 1
-    versionName "1.0"
+    versionName project.version
+    minSdkVersion Integer.parseInt(project.minSdkVersion)
+    targetSdkVersion Integer.parseInt(project.targetSdkVersion)
   }
 }
 
 dependencies {
   //Dagger 1
-  apt 'com.squareup.dagger:dagger-compiler:1.2.2'
-  compile 'com.squareup.dagger:dagger:1.2.2'
+  apt "com.squareup.dagger:dagger-compiler:$project.dagger1Version"
+  compile "com.squareup.dagger:dagger:$project.dagger1Version"
 
   //Dagger 2
   apt project(path: ':dagger-compiler', transitive: false)
   compile project(path: ':dagger', transitive: false)
 
-  compile 'com.jakewharton:butterknife:7.0.1'
+  compile "com.jakewharton:butterknife:$project.butterKnifeVersion"
 
-  testCompile 'junit:junit:4.12'
+  testCompile "junit:junit:$project.junitVersion"
 }

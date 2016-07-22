@@ -7,7 +7,7 @@ allprojects {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.12'
+  gradleVersion = project.gradleVersion
 }
 
 task clean(type: Delete) {

@@ -3,37 +3,22 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    classpath "com.github.jengelman.gradle.plugins:shadow:$project.shadowPluginVersion"
   }
 }
 
-plugins {
-  id 'java'
-  id 'com.github.johnrengelman.shadow' version '1.2.3'
-}
+apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 
+def buildSrcDir = '../buildsystem'
+apply from: "${buildSrcDir}/shadow.gradle"
+
 import com.github.jengelman.gradle.plugins.shadow.transformers.ServiceFileTransformer
-
 shadowJar {
-  relocate 'javax.inject.Inject', 'javax.inject.Inject2'
-  relocate 'javax.inject.Named', 'javax.inject.Named2'
-  relocate 'javax.inject.Provider', 'javax.inject.Provider2'
-  relocate 'javax.inject.Qualifier', 'javax.inject.Qualifier2'
-  relocate 'javax.inject.Scope', 'javax.inject.Scope2'
-  relocate 'javax.inject.Singleton', 'javax.inject.Singleton2'
-  relocate 'dagger.Lazy', 'dagger.Lazy2'
-  relocate 'dagger.MembersInjector', 'dagger.MembersInjector2'
-  relocate 'dagger.Module', 'dagger.Module2'
-  relocate 'dagger.Provides', 'dagger.Provides2'
-  relocate 'dagger.Provides$Type', 'dagger.Provides$Type2'
-  relocate 'dagger.internal', 'dagger.internal2'
-  relocate 'dagger.producers', 'dagger.producers2'
-
   transform(ServiceFileTransformer)
   classifier = ''
 }
 
 dependencies {
-  compile 'com.google.dagger:dagger-compiler:2.5'
+  compile "com.google.dagger:dagger-compiler:$project.dagger2Version"
 }
