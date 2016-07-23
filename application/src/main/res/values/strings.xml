@@ -1,4 +1,10 @@
 <resources>
   <string name="app_name">Two Daggers</string>
-  <string name="btn_text_print_message">Print Message</string>
+  <string name="url">http://www.fernandocejas.com/</string>
+  <string name="url_github">https://github.com/android10/two-daggers</string>
+
+  <string name="txt_sample_description">The purpose of this example is to be able to migration from Dagger 1 to Dagger 2. For instance here we have 2 Dagger versions working together without any conflicts or clashes in the classpath.</string>
+  <string name="btn_text_print_message">Run Example</string>
+
+  <string name="string_content_description">Non accessible view</string>
 </resources>

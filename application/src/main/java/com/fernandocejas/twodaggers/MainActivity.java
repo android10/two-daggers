@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 
   @SuppressLint("SetTextI18n")
   @OnClick(R.id.btn_printMessage) void onPrintMessageClick() {
-    txt_dagger1.setText("Dagger 1 Injected: " + dagger1DataManager.data());
-    txt_dagger2.setText("Dagger 2 Injected: " + dagger2DataManager.data());
+    txt_dagger1.setText("Class injected with Dagger 1: " + dagger1DataManager.data());
+    txt_dagger2.setText("Class injected with Dagger 2: " + dagger2DataManager.data());
   }
 }
