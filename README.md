@@ -3,6 +3,8 @@ Two Daggers Living Together
 
 This is a sample app that is part of a blog post I have written about how Dagger 1 and Dagger 2 can live together in order to facilitate a potential gradual migration process in big codebases with many contributors.
 
+[Android: Dagger 1 and 2 living together](http://fernandocejas.com/2016/08/03/android-dagger-1-and-2-living-together/)
+
 
 Local Development
 -----------------
