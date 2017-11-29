@@ -13,7 +13,7 @@ import com.fernandocejas.twodaggers.di.Dagger2Module;
 import com.fernandocejas.twodaggers.di.DaggerDagger2Component;
 import dagger.ObjectGraph;
 import javax.inject.Inject;
-//import javax.inject.Inject2;
+import javax.inject.Inject2;
 
 public class MainActivity extends Activity {
 
