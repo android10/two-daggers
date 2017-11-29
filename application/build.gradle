@@ -6,12 +6,10 @@ buildscript {
   }
   dependencies {
     classpath "com.android.tools.build:gradle:$project.androidBuildToolsVersion"
-    classpath "com.neenbedankt.gradle.plugins:android-apt:$project.aptVersion"
   }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
   compileSdkVersion Integer.parseInt(project.compileSdkVersion)
@@ -26,14 +24,15 @@ android {
 
 dependencies {
   //Dagger 1
-  apt "com.squareup.dagger:dagger-compiler:$project.dagger1Version"
+  annotationProcessor "com.squareup.dagger:dagger-compiler:$project.dagger1Version"
   compile "com.squareup.dagger:dagger:$project.dagger1Version"
 
   //Dagger 2
-  apt project(path: ':two-daggers-compiler', transitive: false)
+  annotationProcessor project(path: ':two-daggers-compiler', transitive: false)
   compile project(path: ':two-daggers-library', transitive: false)
 
   compile "com.jakewharton:butterknife:$project.butterKnifeVersion"
+  annotationProcessor "com.jakewharton:butterknife-compiler:$project.butterKnifeVersion"
 
   testCompile "junit:junit:$project.junitVersion"
 }
