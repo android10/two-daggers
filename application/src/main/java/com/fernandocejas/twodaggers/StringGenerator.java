@@ -1,12 +1,12 @@
 package com.fernandocejas.twodaggers;
 
 import javax.inject.Inject;
-//import javax.inject.Inject2;
+import javax.inject.Inject2;
 import javax.inject.Singleton;
-//import javax.inject.Singleton2;
+import javax.inject.Singleton2;
 
 @Singleton
-//@Singleton2
+@Singleton2
 public class StringGenerator {
 
   @Inject
