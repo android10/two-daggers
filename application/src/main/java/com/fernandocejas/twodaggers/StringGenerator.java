@@ -10,7 +10,7 @@ import javax.inject.Singleton2;
 public class StringGenerator {
 
   @Inject
-//  @Inject2
+  @Inject2
   /**
    * This class can be injected by both dagger 1 and 2
    */
